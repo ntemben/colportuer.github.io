@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html>
+<head >
+	<nav class="zone green">
+		<img src="https://colporteur.co.za/wp-content/themes/Colporteur/img/logo.png" alt="Colporteur logo" width="60" height="60">PASSENGER BOOKING APPLICATION</nav>
+
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<title>Booking
+	</title>
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="gridpractice.css">
+</head>
+
+<body style="background-color:#e2ca95;">
+    <form method="post" autocomplete="on" name="google-sheet" id="myForm" 
+    onsubmit=" function(){alert('good');} /*setTimeout(function(){window.location.reload();},2000)*/;/*setTimeout(function(){ alert('Hello'); }, 10000);*/  /*window.location.href='https://api.whatsapp.com/send?phone=+27762881758';*/ ">
+
+<div class="container">
+    <div class="booking-form">
+
+        <div class="row">
+            <div class="col col-3 col-sm-4 col-md-4 col-lg-4" id="first">
+                
+                      Trip Type
+                    </div>
+                    <div class="col col-7.5 col-sm-4 col-md-8 col-lg-8">
+                    	<div class="radios" required>
+                             <input type="radio" name="Trip Type" required="" value="Return">Return
+                             <input type="radio" name="Trip Type" value="One way">One way
+                 	    </div>
+                    </div>
+        </div>
+         <div class="row">
+            <div class="col col-3 col-sm-4 col-md-4 col-lg-4" id="first">
+              Departing point:
+            </div>
+            <div class="col col-5.5 col-sm-4 col-md-8 col-lg-8">
+             <select class="form-control" name="Departing point" >
+                <option value="unspecified">SELECT BELOW</option>
+                <option>POLOKWANE</option>
+                <option>MOKOPANE</option>
+                <option>NABOOMSPRUIT</option>
+                <option>MODIMOLLE</option>
+                <option>PRETORIA</option>
+                <option>JOHANNESBURG</option>
+                <option>DURBAN</option>
+                <option>CAPE TOWN</option>
+                <option>PORT ELIZABETH</option>
+            </select>
+            </div>
+        </div>
+         <div class="row">
+            <div class="col col-3 col-sm-4 col-md-4 col-lg-4" id="first">
+              Destination:
+            </div>
+            <div class="col  col-5 col-sm-4 col-md-8 col-lg-8">
+             <select class="form-control" name="Destination" >
+                <option value="unspecified">SELECT BELOW</option>
+                <option>POLOKWANE</option>
+                <option>MOKOPANE</option>
+                <option>NABOOMSPRUIT</option>
+                <option>MODIMOLLE</option>
+                <option>PRETORIA</option>
+                <option>JOHANNESBURG</option>
+                <option>DURBAN</option>
+                <option>CAPE TOWN</option>
+                <option>PORT ELIZABETH</option>
+            </select>
+            </div>
+        </div>
+         <div class="row">
+            <div class="col col-1 col-sm-4 col-md-4 col-lg-4" id="first">
+              Departure date:
+            </div>
+            <div class="col col-1 col-sm-4 col-md-8 col-lg-8">
+             <input onchange="showDate(this.value)" type="date" class="date" class="form-control" id="position" class="position" name="Departure date" style="text-transform:uppercase">
+                <div id="time"></div>
+
+            </div>
+        </div>
+         <div class="row">
+            <div class="col col-1 col-sm-4 col-md-4 col-lg-4" id="first">
+              Return Date:
+            </div>
+            <div class="col col-1 col-sm-4 col-md-8 col-lg-8">
+             <input onchange="showDatetwo(this.value)" type="date" class="date" class="form-control" id="position" name="Return Date" style="text-transform:uppercase"/>
+                <div id="timetwo"></div>
+            </div>
+        </div>
+         <div class="row">
+            <div class="col col-3 col-sm-4 col-md-4 col-lg-4" id="first">
+              Adults:
+            </div>
+            <div class="col col-4.5 col-sm-4 col-md-8 col-lg-8">
+             <select class="form-control" name="Adults" >
+        		<option value="0">SELECT BELOW</option>
+        		<option>1</option>
+        		<option>2</option>
+        		<option>3</option>
+                <option>4</option>
+                <option>5</option>
+                <option>6</option>
+                <option>7</option>
+                <option>8</option>
+                <option>9</option>
+                <option>10</option>
+                <option>11</option>
+                <option>12</option>
+                <option>13</option>
+                <option>14</option>
+                <option>15</option>
+                <option>16</option>
+                <option>17</option>
+                <option>18</option>
+                <option>19</option>
+                <option>20</option>
+                <option>21</option>
+                <option>22</option>
+        	</select>
+            </div>
+        </div>
+         <div class="row">
+            <div class="col col-3 col-sm-4 col-md-4 col-lg-4" id="first">
+              Children:
+            </div>
+            <div class="col col-6.5 col-sm-4 col-md-8 col-lg-8">
+        <select class="form-control" name="Children" >
+        		<option value="0">SELECT BELOW</option>
+        		<option>0</option>
+        		<option>1</option>
+        		<option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+        	</select>
+        	<span class="select-arrow"></span>
+            </div>
+        </div>
+         <div class="row">
+            <div class="col col-3 col-sm-4 col-md-4 col-lg-4" id="first">
+              Passenger Contact :
+            </div>
+            <div class="col col-5.5 col-sm-4 col-md-8 col-lg-8">
+             <input class="form-control" type="number" name="Passenger Contact" placeholder="contact" style="text-transform:uppercase" text-align="safe-left" id="position" style="text-transform:uppercase" >
+            </div>
+        </div>
+         <div class="row">
+            <div class="col col-3 col-sm-4 col-md-4 col-lg-4" id="first">
+              <label><span>Alternative Passenger Contact:</span></label>
+            </div>
+            <div class="col col-4.5 col-sm-4 col-md-8 col-lg-8">
+             <input class="form-control" type="number" name="Alternative Passenger Contact" placeholder="contact" id="position" style="text-transform:uppercase">
+            </div>
+        </div>
+         <div class="row">
+            <div class="col col-3 col-sm-4 col-md-4 col-lg-4" id="first">
+              Surname:
+            </div>
+            <div class="col col-6.5 col-sm-4 col-md-8 col-lg-8">
+             <input class="form-control" type="" name="Surname" placeholder="Surname" style="text-transform:uppercase">
+            </div>
+        </div>
+         <div class="row">
+            <div class="col col-3 col-sm-4 col-md-4 col-lg-4" id="first">
+              Full Names:
+            </div>
+            <div class="col col-5.5 col-sm-4 col-md-8 col-lg-8">
+             <input class="form-control" type="" name="Full Names" placeholder="Full Names" style="text-transform:uppercase">
+            </div>
+        </div>
+         <div class="row">
+            <div class="col col-3 col-sm-4 col-md-4 col-lg-4" id="first">
+              Home Address:
+            </div>
+            <div class="col col-6.5 col-sm-4 col-md-8 col-lg-8">
+             <input class="form-control" type="" name="Home Address" placeholder="Home Address" style="text-transform:uppercase" >
+            </div>
+        </div>
+         <div class="row">
+            <div class="col col-3 col-sm-4 col-md-4 col-lg-4" id="first">
+             Next of Kin Names:
+            </div>
+            <div class="col col-6.5 col-sm-4 col-md-8 col-lg-8">
+             <input class="form-control" type="" name="Next of Kin Names" placeholder="Next of Kin Names" style="text-transform:uppercase" >
+            </div>
+        </div>
+         <div class="row">
+            <div class="col col-3 col-sm-4 col-md-4 col-lg-4" id="first">
+            Next of Kin Contacts:
+            </div>
+            <div class="col col-6.5 col-sm-4 col-md-8 col-lg-8">
+             <input class="form-control" type="" name="Next of Kin Contacts" placeholder="Next of Kin Contacts" style="text-transform:uppercase">
+            </div>
+        </div>
+         <div class="row">
+            <div class="col col-3 col-sm-4 col-md-4 col-lg-4" id="first">
+            Purpose Of Travel :
+            </div>
+            <div class="col col-1 col-sm-4 col-md-8 col-lg-8">
+                    
+                <ul>
+                        <li>
+                            <p>
+                                <Select Class="selectmenu" id="whatever" name="Purpose Of Travel" class="form-control" >
+                                    <option value="unspecified">SELECT BELOW</option>
+                                    <option value="BUSINESS">BUSINESS</option>
+                                    <option value="CONSULATE">CONSULATE</option>
+                                    <option value="LEISURE / TOUR">LEISURE / TOUR</option>
+                                    <option value="STOCKING" id="stockinglist">STOCKING</option>
+                                    <option type="text" value="" id="otherpurpose">OTHER</option>
+                                    
+                                </select>
+                            </p>
+                        </li>
+                        </ul>
+                
+            
+        	</select>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col col-3 col-sm-4 col-md-4 col-lg-4" id="first">
+            
+            </div>
+            <div class="col col-12 col-sm-1 col-md-1 col-lg-12">
+                <div class="secondlast">                    
+                        <input type="text" class="enterp" name="" placeholder="ENTER OTHER PURPOSE" class="form-control" size="17">
+                </div>
+                
+            
+            </select>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col col-3 col-sm-4 col-md-4 col-lg-4" id="first">
+            
+            </div>
+            <div class="collast" class="col col-12 col-sm-12 col-md-12 col-lg-12">
+                <div class="last">                    
+                        <ul>
+                        
+                            <li class="stockingspecs">Please Specify:
+                                <br>
+                                <p>Each person is entitled to a maximum of 20kg, with a limited size of 100cm (height), 50cm (width), 50cm (length). Any other parcel weight / dimensions will incur additional costs.</p>
+                                <label id="oslabel">
+                                    <table id="more">
+                                        <tr><th></th></tr>
+                                        <tr>
+                                    <td><input type="checkbox" name="BLANKETS" value="yes">BLANKETS</td><td>
+                                    <input name="BLANKETS QUANTITY" type="number" placeholder="QUANTITY" class=" form-control" ></td></tr> 
+                                    <tr><td> 
+                                    <input type="checkbox" name="DUVETS" value="yes">DUVETS</td><td><input name="DUVETS QUANTITY" type="number" placeholder="QUANTITY" class="form-control" /></td></tr>
+                                    <tr><td>
+                                    <input type="checkbox" name="PILLOWS" value="yes">PILLOWS</td><td><input name="PILLOWS QUANTITY" type="number" placeholder=" QUANTITY" class="form-control" size="5" /></td></tr>
+                                    <tr><td>
+                                    <input type="checkbox" name="BOXES" value="yes">BOXES</td><td><input name="BOXES QUANTITY" type="number" placeholder=" QUANTITY" class="form-control" size="5" /></td></tr>
+                                    <tr><td>
+                                    <input type="checkbox" name="STOCK/BAGS/LUGGAGE" value="yes">STOCK/BAGS/LUGGAGE</td><td><input name="STOCK/BAGS/LUGGAGE QUANTITY" type="number" placeholder=" QUANTITY" class="form-control" size="5" /></td></tr>
+                                    
+                                    <tr><td>
+                                    <input type="text" name="Other Commodity" placeholder="OTHER COMMODITIES" size="10" style="text-transform:uppercase"></td><td><input name="Other Commodity QUANTITY" type="number" placeholder="Quantity" class="form-control" size="5" />
+                                    </td></tr> 
+                                    <!-- <input name="Other OS" type="text" placeholder="Other OS" class="form-control" /> -->
+                                    </table>
+                                </label>
+                            </li>
+                            
+                        </ul>
+                </div>
+                
+            
+            </select>
+            </div>
+        </div>
+
+        <p>Disclaimer:
+            <br>
+            <ul>
+                <li class="disclaimer">Booking through any other means than this application may incur additional costs.</li>
+                <li class="disclaimer">We do not encourage booking through the driver as this is not acceptable.</li>
+                <li class="disclaimer">Only senior citizens will be exempted from the first point</li>
+                <li class="disclaimer">All booking to be done between 07:30am and 07:30pm Monday to Thursday</li>
+                <li class="disclaimer">Friday: 07:30am - 12:30pm</li>
+                <li class="disclaimer">No bookings or calls or messages shall strictly be allowed on Saturday</li>
+                <li class="disclaimer">On Sunday bookings shall be done between 08:00am and 06:00pm</li>
+                <li class="disclaimer">Bookings for Sunday trips shall be done by 07:30pm Tuesday.</li>
+                <li class="disclaimer">Departure time from Polokwane to Johanesburg is at 05:30am Monday to Friday and at 04:15 Sunday.</li>
+            </ul>
+            
+
+        <script>
+function myFunction() {
+  alert("Thank you for booking with us. You will be directed to our whatsApp line. Kindly text \"Booked\" to indicate your booking");
+}
+</script>
+
+
+            <div class="col-md-3">
+            <div class="form-btn">
+                <!-- <input type="button" value="Book" class="submit-btn" id="btnsubmit" onclick="submitForm()"> -->
+                <input type="submit" name="submit" value="Book" class="submit-btn" onclick=" myFunction();  window.location.href='https://api.whatsapp.com/send?phone=+27762881758';" />
+
+       
+     
+
+        		<!-- <button class="submit-btn">
+        		Book</button> -->
+        	</div>
+        </div>
+    
+        </div>
+    </div>
+</div>
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns" crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+    function showDate(getdate) {
+                var selectedDate = new Date(getdate);
+                var dateformat = getdate.split('-')
+                var displaydate = document.getElementById('time')
+                var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+                var months = ["January","February","March","April","May","June","July","August","September","October","November","December"]
+    
+                if (displaydate) {
+                    displaydate.textContent = days[selectedDate.getDay()] + ', ' + dateformat[1] + '-' + dateformat[2];
+                }
+            }
+</script>
+<script type="text/javascript">
+    function showDatetwo(getdate) {
+                var selectedDate = new Date(getdate);
+                var dateformat = getdate.split('-')
+                var displaydate = document.getElementById('timetwo')
+                var days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+    
+                if (displaydate) {
+                    displaydate.textContent = days[selectedDate.getDay()] + ', ' + dateformat[1] + '-' + dateformat[2];
+                }
+            }
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+$("select").change(function () {
+    $("select option:selected").each(function () {
+        if ($(this).attr("id") == "stockinglist") {
+            $(".stockingspecs").show();
+        } else {
+            $(".stockingspecs").hide();
+        }
+    });
+}).change();
+});
+</script>
+<script type="text/javascript">
+    $(document).ready(function () {
+$("select").change(function () {
+    $("select option:selected").each(function () {
+        if ($(this).attr("id") == "otherpurpose") {
+            $(".enterp").show();
+        } else {
+            $(".enterp").hide();
+        }
+    });
+}).change();
+});
+</script>
+
+
+</form>
+
+<script type="text/javascript">
+
+
+      const scriptURL = 'https://script.google.com/macros/s/AKfycbyzd0IgUBTYDGcIbM_Fb-eIjhWYsy13RpE-zWJhjhPWzGS90mvTkvyWFZH7jfmEpSJ3/exec'
+            const form = document.forms['google-sheet']
+          
+            form.addEventListener('submit', e => {
+              e.preventDefault()
+              fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+                // .then(response =>
+                //  alert("You have successfully submitted."))
+
+                .catch(error => console.error('Error!', error.message))
+            })
+           
+  </script>
+
+
+</body>
+</html>
